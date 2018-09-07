@@ -1,1 +1,13 @@
-<div><h1>Welcome to Glimmer!</h1></div>
+<h1>BTC Percent</h1>
+
+<input value={{btcAmount}}>
+<input value={{fiatAmount}}
+       onkeyup={{action fiatAmountKeyUp}}>
+<br>
+
+{{#each economies key="@index" as |economy|}}
+  {{economy.name}} ${{economy.size}} {{no-exp economy.ownedPercentage}}%
+  <br>
+{{/each}}
+
+<WebglCanvas />
